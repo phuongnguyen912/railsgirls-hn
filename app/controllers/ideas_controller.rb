@@ -11,7 +11,7 @@ class IdeasController < ApplicationController
   # GET /ideas/1.json
   def show
     
-@comments = @idea.comments.all
+@comments = @idea.comments.order(like_count: :desc).all
 @comment = @idea.comments.build
   end
 
